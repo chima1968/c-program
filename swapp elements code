@@ -1,0 +1,55 @@
+#include <stdio.h>
+
+
+int main()
+{    int a[5];
+    int count,n,i,temp;
+    int *arrptr;
+
+
+    arrptr=a;
+
+    printf("input the number of elements:");
+    scanf("%d",&n);
+
+    for (count=0;count<n;count++)
+    {
+        printf("input the value of element %d:",count);
+        scanf("%d",arrptr++);
+
+    
+   
+    }
+
+     arrptr=a;
+
+
+    printf("before swapping the values are:\n");
+
+ /*this for loop prints the elements of the array using pointers*/
+    for(count=0;count<n;count++)
+    {
+        printf("\n element %d:%d",count,*(arrptr++));
+
+
+
+    }
+     arrptr=a;
+ /*this for loop swaps adjacent elements of the array*/
+    for (i=0;i<n;i+=3)
+    {
+
+
+        temp=a[i+2];
+        a[i+2]=a[i+1];
+        a[i+1]=a[i];
+        a[i]=temp;
+
+
+
+    }
+    /*this for loop prints out the swapped elements of the array*/
+    for(i=0;i<n;i++)
+    {
+        printf("\t\nelement %d:%d\n",i,a[i]);
+    }
